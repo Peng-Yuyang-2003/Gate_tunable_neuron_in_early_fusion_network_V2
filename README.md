@@ -11,16 +11,16 @@ We set up a neural network containing only one neuron to adjust the parameters t
 `tips`:Set white background color to view the following image.
 ![image](https://github.com/Peng-Yuyang-2003/Gatetunbal_neuron_in_early_fusion_network_V2/blob/main/single_neuron.png)
 By comparing with the device test result in the paper, we conclude that the simulation result are very similar to it.  
-`main.py` is the code we use the SNN reasoning. `main2.py` is the code we train the SNN. These two files are basically the same, except for a slight difference in the configuration of the parameters.
+`main1.py` is the code we use the SNN reasoning. `main2.py` is the code we train the SNN. These two files are basically the same, except for a slight difference in the configuration of the parameters.
 ## 4 bit precision memristor model
 In our neuron network simulation, we use a 4 bit precision memristor model to present 16 different weights. As we don’t mainly focus on synapses, we cites others people’s work to demonstrate this simulation assumption is feasible. Yao, P. et al. (Nature 577, 641–646, 2020) has implemented a memristor-based neural network with 15-level weights. Their memristor synapses have been implemented in hardware. Positive and negative weights have been implemented through differential pairs. We first trained our SNN with the float32 data type and then quantify the weight to 4 bits. Finally, we briefly trained the neural network to adapt to low precision weights of 4 bits, and obtained that the accuracy loss of the neural network compared to the float32 data type is no more than 3%.  
 `quantize_the_weights.py`is the code to quantize the weights in SNN. `spiking_model_quantized_weights.pth`and`spiking_model_weights.pth`are the weights we hae already trained.
 ## How to use the neural network reasoning
 1. Download all files.
 2. Configure the environment with python=3.12.7 and torch=2.5.1+cu124, as well as installing the rest of the packages. You can also use the requirements.txt to configuring the software environment all at once.
-3. Run `main.py` and wait for the output. It will use the `spiking_model_quantized_weights.pth` which we have already gotten through training. If everything goes well, your test set accuracy should be around 91%. The average result for the ten tests we performed was 91.39%. This result also increased to 95.45% when the number of hidden layer neurons increased from 100 to 300.
+3. Run `main1.py` and wait for the output. It will use the `spiking_model_quantized_weights.pth` which we have already gotten through training. If everything goes well, your test set accuracy should be around 91%. The average result for the ten tests we performed was 91.39%. This result also increased to 95.45% when the number of hidden layer neurons increased from 100 to 300.
 ## How to train the neural network
 1. Make sure you have successfully use the neural network reasoning
 2. Run `main2.py` and wait until it finished. The `spiking_model_weights.pth` stores the weights after training.
 3. Run` quantize_the_weights.py`. Then you get `spiking_model_quantized_weights.pth`.
-4. Run `main.py` and wait for the output. Test set accuracy depends on your configuration of the parameters.
+4. Run `main1.py` and wait for the output. Test set accuracy depends on your configuration of the parameters.
