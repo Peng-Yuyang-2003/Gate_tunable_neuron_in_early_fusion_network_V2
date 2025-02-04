@@ -13,6 +13,8 @@ By comparing with the device test result in the paper, we conclude that the simu
 ## 4 bit precision memristor model
 In our neuron network simulation, we use a 4 bit precision memristor model to present 16 different weight. As we don’t mainly focus on synapses, we cites others people’s work to demonstrate this simulation assumption is feasible. Yao, P. et al. (Nature 577, 641–646, 2020) has implemented a memristor-based neural network with 15-level weights. Their memristor synapses have been implemented in hardware. Positive and negative weights have been implemented through differential pairs. We first trained our SNN with the float32 data type and then quantify the weight to 4 bits. Finally, we briefly trained the neural network to adapt to low precision weights of 4 bits, and obtained that the accuracy loss of the neural network compared to the float32 data type is no more than 3%.
 ## How to use the neural network reasoning
-### first
+1. Download all files.
+2. Configure the environment with python=3.12.7 and torch=2.5.1+cu124, as well as installing the rest of the packages. You can also use the requirements.txt to configuring the software environment all at once.
+3. Run main.py and wait for the output. Test set accuracy is around 91%.
 ## How to train the neural network
 ### first
