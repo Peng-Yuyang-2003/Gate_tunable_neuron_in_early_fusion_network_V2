@@ -10,7 +10,7 @@ We set up a neural network containing only one neuron to adjust the parameters t
 `tips`:Set white background color to view the following image.
 ![image](https://github.com/Peng-Yuyang-2003/Gatetunbal_neuron_in_early_fusion_network_V2/blob/main/single_neuron.png)
 By comparing with the device test result in the paper, the simulation results are very similar to it.
-## How to infer
+## How to use the neural network reasoning
 ### first
-## How to train
+## How to train the neural network
 ### first
