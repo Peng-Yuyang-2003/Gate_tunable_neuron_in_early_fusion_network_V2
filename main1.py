@@ -21,7 +21,7 @@ from scipy.io import savemat
 data = np.array([])
 global mx
 global batch_size
-mx=8                 #the current ratio of nuerons 
+mx=8                 # the current ratio of nuerons under -1.5V and 0V
 batch_size = 6000    #a batch*2 contains how many samples:12000
 print('mx={};batch_size={}'.format(mx,batch_size))
 steps=128            #simulation time accurancy
